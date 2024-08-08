@@ -1,4 +1,4 @@
-package com.wifi.publicwifilocator.service;
+package com.wifi.publicwifilocator;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

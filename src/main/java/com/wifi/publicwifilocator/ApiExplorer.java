@@ -1,4 +1,4 @@
-package com.wifi.publicwifilocator.service;
+package com.wifi.publicwifilocator;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

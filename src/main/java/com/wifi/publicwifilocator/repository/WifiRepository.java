@@ -3,10 +3,10 @@ package com.wifi.publicwifilocator.repository;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wifi.publicwifilocator.ApiExplorer;
+import com.wifi.publicwifilocator.DBConnection;
+import com.wifi.publicwifilocator.Pos;
 import com.wifi.publicwifilocator.dto.WifiDto;
-import com.wifi.publicwifilocator.service.ApiExplorer;
-import com.wifi.publicwifilocator.service.DBConnection;
-import com.wifi.publicwifilocator.service.Pos;
 import com.wifi.publicwifilocator.entity.LocationHistory;
 
 import java.sql.Connection;
