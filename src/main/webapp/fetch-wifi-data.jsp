@@ -1,16 +1,23 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hjkim
-  Date: 2024. 8. 9.
-  Time: 04:09
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@ page import="com.wifi.publicwifilocator.service.WifiService" %>
+<%@ page import="com.wifi.publicwifilocator.dto.WifiDto" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.wifi.publicwifilocator.Pos" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-</body>
-</html>
+<%-- Post -> Redirect -> Get 방식을 위한 페이지 --%>
+<%
+    WifiService wifiService = new WifiService();
+
+    double lat = Double.parseDouble(request.getParameter("lat"));
+    double lnt = Double.parseDouble(request.getParameter("lnt"));
+
+    ArrayList<WifiDto> list = new ArrayList<>();
+
+    if (request.getParameter("lat") != null && request.getParameter("lnt") != null) {
+        Pos pos = new Pos(lat, lnt);
+        list = wifiService.getWifiList(pos);
+    }
+
+    session.setAttribute("list", list);
+    response.sendRedirect("/?lat=" + lat + "&lnt=" + lnt);
+%>

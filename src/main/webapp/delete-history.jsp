@@ -1,16 +1,22 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hjkim
-  Date: 2024. 8. 9.
-  Time: 04:08
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.wifi.publicwifilocator.service.WifiService" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+%>
+<script>
+    let answer = confirm('삭제하시겠습니까?');
 
-</body>
-</html>
+    if (answer) {
+        <%
+            WifiService wifiService = new WifiService();
+            if(wifiService.removeHistory(Integer.parseInt(request.getParameter("id")))) {
+        %>
+        alert("삭제 완료되었습니다.");
+        location.href = "history.jsp";
+        <%
+            }
+        %>
+    } else {
+        history.go(-1);
+    }
+</script>
