@@ -8,7 +8,7 @@
   boolean isFirst = true;
 
   try {
-    totalCnt = Integer.parseInt(String.valueOf(apiExplorer.getTotalCount()));
+    totalCnt = apiExplorer.getTotalCount();
 
     if (!wifiService.saveWifiData()) {
       isFirst = false;
@@ -33,7 +33,7 @@
   <%
     }
   %>
-  <a href="/">홈 으로 가기</a>
+  <a href="/">홈으로 가기</a>
 </div>
 
 </body>

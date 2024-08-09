@@ -10,8 +10,8 @@
 <html>
 <head>
     <title>와이파이 정보 구하기</title>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
-<link rel="stylesheet" href="./resources/styles.css">
 <script>
     function getPosition() {
         const lat = document.getElementById("lat");

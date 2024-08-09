@@ -11,8 +11,7 @@ public class DBConnection {
     public static Connection DBConnect() {
         try {
             Class.forName("org.sqlite.JDBC");
-            //TODO
-            conn = DriverManager.getConnection("jdbc:sqlite:/Users/.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:/Users/hjkim/PublicWifiLocator/PublicWiFiLocator/identifier.sqlite");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
