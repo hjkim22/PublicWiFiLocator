@@ -22,5 +22,5 @@
 
 
 ## 📌 구현영상
-![Thumbnail](https://github.com/user-attachments/assets/13f4d838-bfc3-4035-bc95-e9f9bb8fb629)
+[![Thumbnail](https://github.com/user-attachments/assets/13f4d838-bfc3-4035-bc95-e9f9bb8fb629)](https://www.youtube.com/watch?v=roBxOsmDD1o&t=8s)
 👉 https://www.youtube.com/watch?v=roBxOsmDD1o&t=8s
