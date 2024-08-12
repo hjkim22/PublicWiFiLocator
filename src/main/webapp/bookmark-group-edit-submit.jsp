@@ -2,7 +2,6 @@
 <%@ page import="com.wifi.publicwifilocator.service.BookmarkService" %>
 <%
   request.setCharacterEncoding("UTF-8");
-
   int id = Integer.parseInt(request.getParameter("id"));
   String bookmarkGroupName = request.getParameter("bookmark_group_name");
   int bookmarkGroupSeq = Integer.parseInt(request.getParameter("bookmark_group_seq"));

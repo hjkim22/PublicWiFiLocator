@@ -2,7 +2,6 @@
 <%@ page import="com.wifi.publicwifilocator.service.BookmarkService" %>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
-
     BookmarkService bookmarkService = new BookmarkService();
     if(bookmarkService.removeBookmarkGroup(id)) {
 %>

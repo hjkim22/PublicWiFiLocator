@@ -4,15 +4,15 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     WifiService wifiService = new WifiService();
-
     ArrayList<LocationHistory> histories = wifiService.getHistory();
 %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>와이파이 정보 구하기</title>
+    <meta charset="UTF-8">
+    <title>위치 히스토리 목록</title>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
-<link rel="stylesheet" href="css/style.css"/>
 <body>
 <h1>위치 히스토리 목록</h1>
 <div class="buttons">
@@ -22,7 +22,6 @@
     <a href="bookmark-list.jsp">북마크 보기</a> |
     <a href="bookmark-group.jsp">북마크 그룹 관리</a>
 </div>
-
 <table>
     <thead>
     <tr>
@@ -34,36 +33,26 @@
     </tr>
     </thead>
     <tbody>
-    <% if (histories.size() == 0) { %>
+    <% if (histories.isEmpty()) { %>
     <tr>
         <td colspan="5" class="table_blank">히스토리 정보가 존재하지 않습니다.</td>
     </tr>
-    <%
-    } else {
-        for (int i = 0; i < histories.size(); i++) {
-    %>
+    <% } else {
+        for (LocationHistory history : histories) { %>
     <tr>
-        <td><%=histories.get(i).getHistoryId()%>
-        </td>
-        <td><%=histories.get(i).getLnt()%>
-        </td>
-        <td><%=histories.get(i).getLat()%>
-        </td>
-        <td><%=histories.get(i).getSearchDate()%>
-        </td>
+        <td><%= history.getHistoryId() %></td>
+        <td><%= history.getLnt() %></td>
+        <td><%= history.getLat() %></td>
+        <td><%= history.getSearchDate() %></td>
         <td style="text-align: center">
-            <a href="delete-history.jsp?id=<%=histories.get(i).getHistoryId()%>">
+            <a href="delete-history.jsp?id=<%= history.getHistoryId() %>">
                 <input type="button" value="삭제">
             </a>
         </td>
     </tr>
-    <%
-            }
-        }
-    %>
+    <%   }
+    } %>
     </tbody>
 </table>
-
-
 </body>
 </html>

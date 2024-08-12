@@ -2,13 +2,13 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.wifi.publicwifilocator.entity.BookmarkGroup" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <%
   request.setCharacterEncoding("UTF-8");
-  if (request.getParameter("bookmark_group_id").equals("")) {
+  String bookmarkGroupIdParam = request.getParameter("bookmark_group_id");
+  if (bookmarkGroupIdParam == null || bookmarkGroupIdParam.isEmpty()) {
     BookmarkService bookmarkService = new BookmarkService();
     ArrayList<BookmarkGroup> bookmarkGroups = bookmarkService.getBookmarkGroups();
-    if (bookmarkGroups.size() == 0) {
+    if (bookmarkGroups.isEmpty()) {
 %>
 <script>
   alert('북마크 그룹을 먼저 생성해주세요.');
@@ -23,11 +23,9 @@
 </script>
 <%
   }
-%>
-<% } else {
-  int bookmarkGroupId = Integer.parseInt(request.getParameter("bookmark_group_id"));
+} else {
+  int bookmarkGroupId = Integer.parseInt(bookmarkGroupIdParam);
   String mgrNo = request.getParameter("mgrNo");
-
   BookmarkService bookmarkService = new BookmarkService();
   if (bookmarkService.addBookmark(bookmarkGroupId, mgrNo)) {
 %>

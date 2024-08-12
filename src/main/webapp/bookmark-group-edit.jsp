@@ -3,17 +3,16 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     BookmarkService bookmarkService = new BookmarkService();
-
     int id = Integer.parseInt(request.getParameter("id"));
     BookmarkGroupDto bookmarkGroupInfo = bookmarkService.getBookmarkGroupInformation(id);
-
 %>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>와이파이 정보 구하기</title>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
-<link rel="stylesheet" href="css/style.css"/>
 <body>
 <h1>북마크 그룹 수정</h1>
 <div class="buttons">
@@ -23,20 +22,18 @@
     <a href="bookmark-list.jsp">북마크 보기</a> |
     <a href="bookmark-group.jsp">북마크 그룹 관리</a>
 </div>
-
 <form action="bookmark-group-edit-submit.jsp" method="post">
-    <input type="hidden" name="id" value="<%=id%>">
+    <input type="hidden" name="id" value="<%= id %>">
     <table>
         <tr>
             <th>북마크 이름</th>
             <td><input type="text" name="bookmark_group_name" id="bookmark_group_name"
-                       value="<%=bookmarkGroupInfo.getBookmarkGroupName()%>">
-            </td>
+                       value="<%= bookmarkGroupInfo.getBookmarkGroupName() %>"></td>
         </tr>
         <tr>
             <th>순서</th>
             <td><input type="text" name="bookmark_group_seq" id="bookmark_group_seq"
-                       value="<%=bookmarkGroupInfo.getBookmarkGroupSeq()%>"></td>
+                       value="<%= bookmarkGroupInfo.getBookmarkGroupSeq() %>"></td>
         </tr>
         <tr>
             <td colspan="2" style="text-align: center">
@@ -46,7 +43,5 @@
         </tr>
     </table>
 </form>
-
-
 </body>
 </html>

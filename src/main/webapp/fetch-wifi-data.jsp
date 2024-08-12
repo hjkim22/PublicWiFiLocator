@@ -4,7 +4,6 @@
 <%@ page import="com.wifi.publicwifilocator.Pos" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%-- Post -> Redirect -> Get 방식을 위한 페이지 --%>
 <%
     WifiService wifiService = new WifiService();
 
@@ -12,7 +11,6 @@
     double lnt = Double.parseDouble(request.getParameter("lnt"));
 
     ArrayList<WifiDto> list = new ArrayList<>();
-
     if (request.getParameter("lat") != null && request.getParameter("lnt") != null) {
         Pos pos = new Pos(lat, lnt);
         list = wifiService.getWifiList(pos);
