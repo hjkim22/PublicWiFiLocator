@@ -245,3 +245,6 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,java,gradle,intellij
+
+# SQLite 데이터베이스 파일
+identifier.sqlite
