@@ -12,7 +12,7 @@
 <head>
     <title>와이파이 정보 구하기</title>
 </head>
-<link rel="stylesheet" href="./resources/styles.css">
+<link rel="stylesheet" href="css/style.css"/>
 <body>
 <h1>위치 히스토리 목록</h1>
 <div class="buttons">

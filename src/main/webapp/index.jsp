@@ -33,7 +33,7 @@
     <a href="bookmark-group.jsp">북마크 그룹 관리</a>
 </div>
 
-<form action="getWifi.jsp" method="post">
+<form action="fetch-wifi-data.jsp" method="post">
     <label for="lat">
         LAT : <input type="text" id="lat" name="lat" value="<%= lat %>"/>,
     </label>
