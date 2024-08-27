@@ -1,7 +1,7 @@
-## 🇰🇷 Project - PublicWifiLocator
+## 🌐 Project - PublicWifiLocator
 - 서울 공공 데이터 API를 이용하여 자신의 위치 기반으로 가까이 존재하는 공공 와이파이 20개를 찾는 제공하는 웹서비스 개발
 
-## 🚀 Tech Stack
+## 🛠️ Tech Stack
 - Language : `Java`
 - Build : `Gradle`
 - Database : `SQLite`
@@ -21,6 +21,6 @@
 
 
 
-## 📌 구현영상
+## ▶️ 구현영상
 [![Thumbnail](https://github.com/user-attachments/assets/13f4d838-bfc3-4035-bc95-e9f9bb8fb629)](https://www.youtube.com/watch?v=roBxOsmDD1o&t=8s)
 👉 https://www.youtube.com/watch?v=roBxOsmDD1o&t=8s
